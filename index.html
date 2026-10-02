@@ -10,57 +10,96 @@
 </head>
 
 <body>
-     <h1 class="text-3xl font-bold underline text-red-700">
-      Hello world!
-    </h1>
+     <h1 class="text-3xl font-bold underline text-red-700 text-center">
+    ALEXANDER
+     </h1>
 
-    <button id="switch">Switch</button>
-    <header>
-        <nav>
-            <span>@alexapapalada</span>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
+    <button id="switch" class="block mx-auto">
+    Switch
+    </button>
+        <nav class="flex justify-between items-center px-6">
+
+        <span>
+            @alexapapalada
+        </span>
+
+        <ul class="flex gap-10">
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact Me</a>
+            </li>
+        </ul>
+
+    </nav>
     </header>
 
-    <main>
-        <section id="projects"> 
-            <h2 class="projects">My Projects</h2>
-            <p>Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
-            </p>
-        </section>
+   <main class="grid grid-cols-3 gap-5 mx-6 mt-16">
 
-        <section id="services">
-            <h2 class="services">My Services</h2>
-            <p>Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems
-                Analyst</p>
-        </section>
+    <!-- PROJECTS -->
+    <section id="projects"
+        class="h-80 border border-black text-center p-3">
 
-        <section id="contact">
-            <h2 class="contact">Let's build together!</h2>
-            <form action="#">
-                <!-- Name -->
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+        <h2 class="text-4xl font-bold text-red-700">
+            My Projects
+        </h2>
 
-                <!-- Email -->
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
+        <p>
+            Personal portfolio, payroll system, company website,
+            startup website, and compliance monitoring system.
+        </p>
 
-                <!-- Message -->
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="5" required></textarea>
+    </section>
 
-                <!-- Submit -->
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
 
-    <!-- <script src="script.js"></script> -->
-</body>
+    <!-- SERVICES -->
+    <section id="services"
+        class="h-80 border border-black text-center p-3">
 
-</html>
+        <h2 class="text-4xl font-bold text-red-700">
+            My Services
+        </h2>
+
+        <p>
+            Website Creation, System Creation, AI Automation,
+            Database Management, Project Management, Systems Analyst
+        </p>
+
+    </section>
+    
+    <!-- CONTACT -->
+    <section id="contact"
+        class="h-80 border border-black text-center p-3">
+
+        <h2 class="text-4xl font-bold text-red-700">
+            Let's build together!
+        </h2>
+
+        <form action="#">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+
+            <button
+                type="submit"
+                class="bg-black text-white text-xs py-2 rounded-lg mt-2">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
