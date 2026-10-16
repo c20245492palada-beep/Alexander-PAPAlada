@@ -1,1 +1,151 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Myco | Portfolio</title>    <title>My Portfolio</title>    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>    <style type="text/tailwindcss">        @custom-variant dark (&:where(.dark, .dark *));    </style></head><body class="bg-white text-gray-800">    <header class="border-b">        <nav class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 px-6 py-5 sm:flex-row">            <a href="#home" class="text-xl font-bold text-gray-900">Myco</a>            <ul class="flex gap-6 text-sm">                <li><a class="hover:text-blue-600" href="#projects">Projects</a></li>                <li><a class="hover:text-blue-600" href="#services">Services</a></li>                <li><a class="hover:text-blue-600" href="#contact">Contact</a></li><body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">    <h1 class="text-2xl font-bold underline text-red-700 text-center dark:text-red-300">        Myco    </h1>    <button id="switch" type="button" aria-pressed="false" class="bg-black text-white text-xs px-4 py-2 rounded-md block mx-auto dark:bg-white dark:text-black">        Toggle dark mode    </button>       <header class="mt-1">        <nav class="flex justify-between items-center px-0 text-xs">            <span>                @myco                           </span>            <ul class="flex gap-5">                <li>                    <a href="#projects">Projects</a>                </li>                <li>                    <a href="#services">Services</a>                </li>                <li>                    <a href="#contact">Contact Me</a>                </li>            </ul>        </nav>    </header>    <main class="grid grid-cols-3 gap-5 mx-6 mt-16">    <main id="home" class="mx-auto max-w-4xl px-6">        <section class="py-16">            <h1 class="text-4xl font-bold text-gray-900">Hi, I'm Myco.</h1>            <p class="mt-4 max-w-2xl text-lg text-gray-600">I create websites and systems to help people and businesses work better.</p>        </section>        <section            id="projects"            class="h-80 border border-black text-center p-3 bg-amber-500 dark:border-slate-500 dark:bg-slate-800">            <h2 class="text-2xl font-bold text-pink-400 dark:text-pink-300">                My Projects            </h2>            <p class="text-xs">                Personal portfolio, payroll system, company website,                startup website, and compliance monitoring system.            </p>        <section id="projects" class="border-t py-10">            <h2 class="text-2xl font-bold text-gray-900">Projects</h2>            <ul class="mt-4 list-inside list-disc space-y-2 text-gray-600">                <li>Personal and company websites</li>                <li>Payroll systems</li>                <li>Compliance monitoring systems</li>            </ul>        </section>        <section            id="services"            class="h-80 border border-black text-center p-3 bg-red-600 dark:border-slate-500 dark:bg-slate-800">            <h2 class="text-2xl font-bold text-pink-400 dark:text-pink-300">                My Services            </h2>            <p class="text-xs">                Website Creation, System Creation, AI Automation,                Database Management, Project Management, Systems Analyst            </p>        <section id="services" class="border-t py-10">            <h2 class="text-2xl font-bold text-gray-900">Services</h2>            <p class="mt-4 text-gray-600">Website and system creation, AI automation, database management, project management, and systems analysis.</p>        </section>        <section id="contact" class="border-t py-10">            <h2 class="text-2xl font-bold text-gray-900">Contact</h2>            <p class="mt-2 text-gray-600">Have a project in mind? Send me a message.</p>            <form action="#" method="get" class="mt-6 grid max-w-lg gap-4">                <div>                    <label for="name" class="mb-1 block text-sm font-medium">Name</label>                    <input class="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none" type="text" id="name" name="name" required>                </div>                <div>                    <label for="email" class="mb-1 block text-sm font-medium">Email</label>                    <input class="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none" type="email" id="email" name="email" required>                </div>                <div>                    <label for="message" class="mb-1 block text-sm font-medium">Message</label>                    <textarea class="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none" id="message" name="message" rows="4" required></textarea>                </div>                <button class="w-fit rounded bg-blue-600 px-5 py-2 font-medium text-white hover:bg-blue-700" type="submit">Send message</button>               <section            id="contact"            class="h-80 border border-black text-center p-3 dark:border-slate-500">            <h2 class="text-2xl font-bold text-pink-400 dark:text-pink-300">                Let's build together!            </h2>            <form class="flex flex-col mt-1">                <label for="name" class="text-xs">                    Name                </label>                <input                    type="text"                    id="name"                    class="border-none outline-none text-xs dark:bg-slate-800"                    required>                <label for="email" class="text-xs mt-8">                    Email                </label>                <input                    type="email"                    id="email"                    class="border outline text-xs dark:border-slate-500 dark:bg-slate-800"                    required>                <label for="message" class="text-xs mt-8">                    Message                                   </label>                <textarea                    id="message"                    rows="5"                    class="border-none outline-none text-xs resize-none dark:bg-slate-800"                    required></textarea>                <button                    type="submit"                    class="bg-slate-900 text-white text-xs py-2 rounded-lg mt-2 dark:bg-white dark:text-slate-900">                    Send Message                </button>            </form>        </section>    </main>    <footer class="border-t py-5 text-center text-sm text-gray-500">        <p>&copy; 2026 Myco</p>    </footer></body></html><footer class="mt-16 bg-black text-white text-center py-4">    <p class="text-xs">        &copy; <span id="year"></span> Myco. All rights reserved.    </p>    <p class="text-xs mt-1">           </p></footer><script>    const today = new Date();    document.getElementById("year").textContent = today.getFullYear();    const themeToggle = document.getElementById("switch");    themeToggle.addEventListener("click", () => {        const isDark = document.body.classList.toggle("dark");        themeToggle.setAttribute("aria-pressed", String(isDark));    });</script></body></html>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEXANDER - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans min-h-screen">
+
+  
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight">
+                @alexpapaladas
+            </a>
+            
+            <nav class="flex items-center space-x-6">
+                <a href="#projects" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                <a href="#services" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a>
+                <a href="#contact" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                
+               
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto text-center py-20 px-6">
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            alexander papaladas
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 mb-8 font-light">
+            i want to indorese my self to the world and become a dinosaur in the world of technology and programming. i want to be a great software engineer and a great programmer and a great person in the world of technology.
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">
+                Get in Touch
+            </a>
+            <a href="#projects" class="px-6 py-3 bg-slate-200 dark:bg-slate-800 font-medium rounded-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                View Work
+            </a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Payroll System</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Automated payroll management and employee processing solution.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Compliance Monitoring</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Real-time system for tracking organizational and regulatory compliance.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Company & Startup Web</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Modern, high-converting websites designed for modern businesses.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-6xl mx-auto py-16 px-6 bg-slate-100/50 dark:bg-slate-800/30 rounded-2xl my-8">
+        <h2 class="text-3xl font-bold text-center mb-12">My Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Website Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Custom responsive websites designed for mobile and desktop screens.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">System Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Custom web applications and internal tools for business operations.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">AI Automation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Streamline workflows and repetitive tasks using modern AI tools.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Database Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Reliable data architecture design and efficient query management.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Project Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">End-to-end management to deliver technical projects on schedule.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Systems Analyst</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Analyzing workflow bottlenecks and designing technical solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-4">Let's Build Together!</h2>
+        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">Send me a message and let's discuss your next project.</p>
+
+        <form onsubmit="alert('Message Sent!'); return false;" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" id="name" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" id="email" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                <textarea id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
+                Send Message
+            </button>
+        </form>
+    </section>
+</html>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
+        © <span id="year"></span> Alexander Papaladas. All rights reserved.
+    </footer>
+
+    <!-- Light/Dark Mode JavaScript -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
