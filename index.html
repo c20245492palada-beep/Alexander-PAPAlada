@@ -4,48 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALEXANDER - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com    "></script>
     <script>
         tailwind.config = {
             darkMode: 'class'
         }
     </script>
+    <style>
+        :root {
+            --brand-yellow: #ffd400;
+            --brand-teal: #249d98;
+            --brand-ink: #111315;
+        }
+
+        .site-header {
+            color: var(--brand-ink);
+            background: var(--brand-yellow);
+            border: 2px solid var(--brand-ink);
+        }
+
+        .teal-divider {
+            height: 28px;
+            background: var(--brand-teal);
+            border-bottom: 4px solid var(--brand-ink);
+        }
+
+        @keyframes spin-logo {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .brand-logo {
+            display: inline-block;
+            white-space: nowrap;
+            transition: scale 180ms ease;
+        }
+
+        .brand-logo:hover,
+        .brand-logo:focus-visible,
+        .brand-logo:active {
+            animation: spin-logo 700ms linear infinite;
+        }
+
+        .brand-logo:focus-visible,
+        .brand-logo:active {
+            scale: 1.5;
+        }
+
+        @media (hover: hover) {
+            .brand-logo:hover {
+                scale: 1.5;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .brand-logo:hover,
+            .brand-logo:focus-visible,
+            .brand-logo:active {
+                animation: none;
+            }
+        }
+
+    </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans min-h-screen">
 
   
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight">
+    <header class="site-header sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-3 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-x-5 gap-y-2">
+            <a href="#" class="brand-logo text-sm sm:text-base font-extrabold tracking-tight">
                 @alexpapaladas
             </a>
             
-            <nav class="flex items-center space-x-6">
-                <a href="#projects" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
-                <a href="#services" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a>
-                <a href="#contact" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
-                
-               
-                <button id="themeToggle" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">
-                    <span id="themeIcon">🌙</span>
-                </button>
+            <nav class="flex flex-wrap items-center justify-end gap-x-3 sm:gap-x-6 gap-y-2 text-[11px] sm:text-xs font-semibold uppercase">
+                <a href="#home" class="hover:text-teal-800 transition">Home</a>
+                <a href="#about" class="hover:text-teal-800 transition">About</a>
+                <a href="#services" class="hover:text-teal-800 transition">Service</a>
+                <a href="#approach" class="hover:text-teal-800 transition">Approach</a>
+                <a href="#contact" class="hover:text-teal-800 transition">Contact</a>
+                <label class="relative inline-flex h-10 w-[85px] cursor-pointer items-center justify-center rounded-[10px] bg-black text-[11px] font-semibold lowercase text-white" aria-label="Dark mode">
+                    <input id="switch" type="checkbox" role="switch" checked class="peer sr-only">
+                    <span aria-hidden="true">switch</span>
+                    <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-[10px] peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-slate-950"></span>
+                </label>
             </nav>
         </div>
+        <div class="teal-divider" aria-hidden="true"></div>
     </header>
 
+    <section id="home" class="bg-teal-500 text-slate-950 border-b-4 border-slate-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+            <p class="home-label text-xs sm:text-sm font-bold uppercase mb-4">Alexander Papaladas</p>
+            <h1 class="max-w-4xl text-4xl sm:text-6xl font-extrabold mb-5">Building practical digital experiences.</h1>
+            <p class="home-description max-w-2xl text-lg sm:text-xl leading-relaxed mb-8">Websites, systems, and automation built around real needs.</p>
+            <div class="home-actions flex flex-wrap gap-3">
+                <a href="#services" class="px-5 py-3 bg-yellow-400 font-semibold border-2 border-slate-950 hover:bg-yellow-300 transition">Explore services</a>
+                <a href="#contact" class="px-5 py-3 bg-transparent font-semibold border-2 border-slate-950 hover:bg-teal-400 transition">Contact me</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
-    <section class="max-w-4xl mx-auto text-center py-20 px-6">
-        <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-            alexander papaladas
-        </h1>
-        <p class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 mb-8 font-light">
+    <section id="about" class="max-w-4xl mx-auto text-center py-20 px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-slate-900 dark:text-slate-100">
+            About Me
+        </h2>
+        <p class="text-lg sm:text-2xl leading-relaxed text-slate-700 dark:text-slate-300 mb-8 font-light">
             i want to indorese my self to the world and become a dinosaur in the world of technology and programming. i want to be a great software engineer and a great programmer and a great person in the world of technology.
         </p>
-        <div class="flex justify-center gap-4">
-            <a href="#contact" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 bg-yellow-400 text-slate-950 font-semibold border-2 border-slate-950 hover:bg-yellow-300 transition">
                 Get in Touch
             </a>
-            <a href="#projects" class="px-6 py-3 bg-slate-200 dark:bg-slate-800 font-medium rounded-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+            <a href="#projects" class="px-6 py-3 bg-teal-500 text-slate-950 font-semibold border-2 border-slate-950 hover:bg-teal-400 transition">
                 View Work
             </a>
         </div>
@@ -79,28 +154,46 @@
         <h2 class="text-3xl font-bold text-center mb-12">My Services</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Website Creation</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Custom responsive websites designed for mobile and desktop screens.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Website Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400"> designed for mobile and desktop screens.</p>
             </div>
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">System Creation</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Custom web applications and internal tools for business operations.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">System Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400"> internal tools for business operations.</p>
             </div>
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">AI Automation</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Streamline workflows and repetitive tasks using modern AI tools.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">AI Automation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400"> repetitive tasks using modern  tools.</p>
             </div>
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Database Management</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Reliable data architecture design and efficient query management.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Database Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400"> architecture design and efficient query management.</p>
             </div>
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Project Management</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">End-to-end management to deliver technical projects on schedule.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Project Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">management to deliver technical projects on schedule.</p>
             </div>
             <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">Systems Analyst</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400">Analyzing workflow bottlenecks and designing technical solutions.</p>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Systems Analyst</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">workflow bottlenecks and designing technical solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="max-w-6xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">My Approach</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Understand</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Clarify the goal, users, and requirements.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Plan</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Choose a practical design and technology.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg text-teal-700 dark:text-teal-300 mb-2">Build</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Develop, test, and refine the solution.</p>
             </div>
         </div>
     </section>
@@ -108,44 +201,66 @@
     <!-- Contact Section -->
     <section id="contact" class="max-w-xl mx-auto py-16 px-6">
         <h2 class="text-3xl font-bold text-center mb-4">Let's Build Together!</h2>
-        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">Send me a message and let's discuss your next project.</p>
+        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">LOG IN LANG DI AH WAAY NA YA.</p>
 
         <form onsubmit="alert('Message Sent!'); return false;" class="space-y-4">
             <div>
                 <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                <input type="text" id="name" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none">
+                <input type="text" id="name" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-teal-500 outline-none">
             </div>
             <div>
                 <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                <input type="email" id="email" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none">
+                <input type="email" id="email" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-teal-500 outline-none">
             </div>
             <div>
                 <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                <textarea id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                <textarea id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
             </div>
-            <button type="submit" class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
+            <button type="submit" class="w-full py-3 bg-yellow-400 text-slate-950 font-semibold border-2 border-slate-950 hover:bg-yellow-300 transition">
                 Send Message
             </button>
         </form>
     </section>
-</html>
+
     <!-- Footer -->
     <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
         © <span id="year"></span> Alexander Papaladas. All rights reserved.
     </footer>
+   
 
-    <!-- Light/Dark Mode JavaScript -->
     <script>
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const html = document.documentElement;
+        const themeSwitch = document.getElementById('switch');
+        const root = document.documentElement;
 
-        themeToggleBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            themeIcon.textContent = isDark ? '☀️' : '🌙';
+        themeSwitch.checked = root.classList.contains('dark');
+        themeSwitch.addEventListener('change', () => {
+            themeSwitch.parentElement.animate(
+                [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }],
+                { duration: 700, easing: 'linear' }
+            );
+
+            if (themeSwitch.checked) {
+                root.classList.add('dark');
+            } else {
+                root.classList.remove('dark');
+            }
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script>
+        const intro = gsap.timeline({
+            defaults: { duration: 0.7, ease: "power2.out" }
+        });
+
+        intro.from(".site-header", { y: -60, opacity: 0 })
+            .from("#home .home-label", { y: 18, opacity: 0 }, "-=0.3")
+            .from("#home h1", { y: 30, scale: 0.65, opacity: 0 }, "-=0.2")
+            .from("#home .home-description", { y: 24, opacity: 0 }, "-=0.35")
+            .fromTo("#home .home-actions a", { y: 14, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.12, immediateRender: false }, "-=0.3")
+            .from("#about p", { y: 24, opacity: 0 }, "-=0.35")
+            .from("#about .flex a", { y: 18, opacity: 0, stagger: 0.12 }, "-=0.3")
+            .from("#projects .grid > div", { y: 40, opacity: 0, stagger: 0.15 }, "-=0.2");
+    </script>
 </body>
+</html>
